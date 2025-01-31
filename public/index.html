@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Chat</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <div class="login-overlay" id="loginOverlay">
+        <div class="login-box">
+            <h2>Join Chat</h2>
+            <input type="text" id="usernameInput" placeholder="Enter your username">
+            <button onclick="joinChat()">Join</button>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="sidebar">
+            <h2>Online Users</h2>
+            <ul id="userList"></ul>
+        </div>
+        
+        <div class="main-chat">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="typing-indicator" id="typingIndicator"></div>
+            <div class="message-input">
+                <input type="text" id="messageInput" placeholder="Type your message..." 
+                       oninput="handleTyping()">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
